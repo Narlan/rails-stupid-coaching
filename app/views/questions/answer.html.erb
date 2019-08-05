@@ -1,0 +1,24 @@
+<% if params[:question] == "I am going to work" %>
+  <% answer = "Great!" %>
+<% elsif params[:question][-1] == "?"%>
+  <% answer = "Silly question, get dressed and go to work!" %>
+<% else %>
+  <% answer = "I don't care, get dressed and go to work!" %>
+<% end %>
+
+<div class="cell you">
+  <div class="line"></div>
+  <div>
+    <p>You: <%= params[:question] %></p>
+    <p>-- You</p>
+  </div>
+</div>
+<div class="cell coatch">
+  <div class="line"></div>
+  <div>
+    <p>Coatch: <%= answer %></p>
+    <p>-- Your coatch</p>
+  </div>
+</div>
+
+<div class="new-question"><%= link_to "Send a message", "/ask" %></div>
